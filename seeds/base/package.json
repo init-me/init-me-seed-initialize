@@ -1,0 +1,26 @@
+{
+  "name": "__data('name')",
+  "version": "__data('version')",
+  "description": "init-me seed for __data('name')",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "jest ./test"
+  },
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "keywords": [
+    "init-me",
+    "seed",
+    "__data('name')"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "7.0.0",
+    "yyl-os": "0.10.0"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}

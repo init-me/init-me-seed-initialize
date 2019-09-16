@@ -1,0 +1,38 @@
+{
+  "name": "init-me-seed-initialize",
+  "version": "0.0.1",
+  "description": "init-me seed create helper",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "jest test/test.js"
+  },
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackness1208/init-me-seed-initialize.git"
+  },
+  "keywords": [
+    "init-me",
+    "seed",
+    "create"
+  ],
+  "author": "jackness",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jackness1208/init-me-seed-initialize/issues"
+  },
+  "homepage": "https://github.com/jackness1208/init-me-seed-initialize#readme",
+  "dependencies": {
+    "inquirer": "7.0.0",
+    "yyl-os": "0.10.0",
+    "yyl-print": "0.7.3",
+    "yyl-replacer": "0.2.1"
+  },
+  "devDependencies": {
+    "yyl-fs": "^0.3.2",
+    "jest": "^24.9.0"
+  }
+}
