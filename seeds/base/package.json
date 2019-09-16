@@ -1,7 +1,7 @@
 {
   "name": "__data('name')",
   "version": "__data('version')",
-  "description": "init-me seed for __data('name')",
+  "description": "init-me seed __data('name')",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {

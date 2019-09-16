@@ -62,7 +62,7 @@ const config = {
         questions.push({
           type: 'input',
           name: 'name',
-          default: path.dirname(targetPath).split(/[\\/]/).pop(),
+          default: targetPath.split(/[\\/]/).pop(),
           message: `${lang.QUESTION_NAME}:`
         })
       }

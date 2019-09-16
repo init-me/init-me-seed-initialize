@@ -1,9 +1,9 @@
 interface IConfig {
   path: string;
   hooks: {
-    beforeStart(op: { env?: IEnv}): Promise<any>;
-    beforeCopy(op: { fileMap: IFileMap, targetPath: string}): Promise<IFileMap>;
-    afterCopy(op: { fileMap: IFileMap, targetPath: string}): Promise<any>;
+    beforeStart(op: { env?: IEnv, targetPath: string}): Promise<any>;
+    beforeCopy(op: { fileMap: IFileMap, targetPath: string, env?: IEnv}): Promise<IFileMap>;
+    afterCopy(op: { fileMap: IFileMap, targetPath: string, env?: IEnv}): Promise<any>;
   };
 }
 interface IEnv {

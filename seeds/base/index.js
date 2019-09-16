@@ -16,9 +16,10 @@ const config = {
     /**
      * seed 包执行前 hooks
      * 可以通过 inquirer 配置成多个 seed 包
-     * @param  env: {[key: string]: string} 命令行参数
+     * @param  targetPath: string 复制目标路径 cwd
+     * @param  env       : {[argv: string]: string} cmd 参数
      * @return Promise<any>
-     * beforeStart({env})
+     * beforeStart({env, targetPath})
      */
     async beforeStart({ env }) {
       let iType = ''
@@ -54,6 +55,7 @@ const config = {
      * 可以在此执行重命名，调整模板路径操作
      * @param  fileMap   : {[oriPath: string]: string[]} 复制操作映射表
      * @param  targetPath: string 复制目标路径 cwd
+     * @param  env       : {[argv: string]: string} cmd 参数
      * @return Promise<fileMap>
      * beforeCopy({fileMap, targetPath})
      */
@@ -73,8 +75,9 @@ const config = {
      * 可以在在此执行 项目初始化如 npm install 操作
      * @param  fileMap   : {[oriPath: string]: string[]} 复制操作映射表
      * @param  targetPath: string 复制目标路径 cwd
+     * @param  env       : {[argv: string]: string} cmd 参数
      * @return Promise<any>
-     * afterCopy({fileMap, targetPath})
+     * afterCopy({fileMap, targetPath, env })
      */
     async afterCopy({targetPath}) {
       await extOs.runCMD('npm i', targetPath)
