@@ -1,6 +1,6 @@
 {
   "name": "init-me-seed-initialize",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "init-me seed create helper",
   "main": "index.js",
   "types": "index.d.ts",
