@@ -67,13 +67,6 @@ const config = {
         })
       }
 
-      if (questions.length) {
-        const r = await inquirer.prompt(questions)
-        if (r.name) {
-          initData = Object.assign(initData, r)
-        }
-      }
-
       // version
       if (env && env.version) {
         initData.version = env.version
@@ -84,6 +77,13 @@ const config = {
           default: '0.1.0',
           message: `${lang.QUESTION_VERSION}`
         })
+      }
+
+      if (questions.length) {
+        const r = await inquirer.prompt(questions)
+        if (r.name) {
+          initData = Object.assign(initData, r)
+        }
       }
 
       config.path = path.join(SEED_PATH, initData.type)
