@@ -6,7 +6,21 @@ it('hooks test', async() => {
   const SEED_PATH = path.join(__dirname, '../seeds')
   const FRAG_PATH = path.join(__dirname, '../__frag')
 
-  await seed.hooks.beforeStart({env: {type: 'base'}})
+  const env = {
+    type: 'base',
+    name: '1',
+    version: '0.1.0',
+    noinstall: true
+  }
+
+  await extFs.removeFiles(FRAG_PATH)
+  await extFs.mkdirSync(FRAG_PATH)
+
+  // check hooks.beforeStart
+  await seed.hooks.beforeStart({
+    env,
+    targetPath: FRAG_PATH
+  })
   expect(seed.path).toEqual(path.join(SEED_PATH, 'base'))
 
   const fileMap = {}
@@ -15,7 +29,18 @@ it('hooks test', async() => {
     fileMap[iPath] = [path.resolve(FRAG_PATH, path.relative(seed.path, iPath))]
   })
 
-  const rMap = await seed.hooks.beforeCopy({ fileMap, targetPath: FRAG_PATH})
+  // check hooks.beforeCopy
+  const rMap = await seed.hooks.beforeCopy({
+    fileMap,
+    targetPath: FRAG_PATH
+  })
   expect(rMap[path.join(seed.path, 'gitignore')]).toEqual([path.join(FRAG_PATH, '.gitignore')])
   expect(rMap[path.join(seed.path, 'npmignore')]).toEqual([path.join(FRAG_PATH, '.npmignore')])
+
+  await extFs.copyFiles(rMap)
+
+  // check hooks.afterCopy
+  await seed.hooks.afterCopy({ targetPath: FRAG_PATH, fileMap: rMap, env })
+
+  await extFs.removeFiles(FRAG_PATH, true)
 })

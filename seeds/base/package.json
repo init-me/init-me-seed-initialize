@@ -21,6 +21,7 @@
     "yyl-os": "0.10.0"
   },
   "devDependencies": {
-    "jest": "^24.9.0"
+    "jest": "^24.9.0",
+    "yyl-fs": "0.3.2"
   }
 }

@@ -106,7 +106,8 @@ const config = {
     async afterCopy({ targetPath, env }) {
       print.log.info(lang.FORMAT_FILE_START)
       const rPaths = [
-        path.join(targetPath, 'package.json')
+        path.join(targetPath, 'package.json'),
+        path.join(targetPath, 'README.md')
       ]
       rPaths.forEach((iPath) => {
         let cnt = fs.readFileSync(iPath).toString()

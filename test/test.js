@@ -45,7 +45,8 @@ it('hooks test', async() => {
   await seed.hooks.afterCopy({ targetPath: FRAG_PATH, fileMap: rMap, env })
 
   const checks = [
-    path.join(FRAG_PATH, 'package.json')
+    path.join(FRAG_PATH, 'package.json'),
+    path.join(FRAG_PATH, 'README.md')
   ]
 
   checks.forEach((iPath) => {
