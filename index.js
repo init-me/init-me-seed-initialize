@@ -104,6 +104,9 @@ const config = {
       return Promise.resolve(fileMap)
     },
     async afterCopy({ targetPath, env }) {
+      if (env.silent) {
+        print.log.setLogLevel(0)
+      }
       print.log.info(lang.FORMAT_FILE_START)
       const rPaths = [
         path.join(targetPath, 'package.json'),

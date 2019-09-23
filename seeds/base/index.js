@@ -3,6 +3,7 @@ const extOs = require('yyl-os')
 const fs = require('fs')
 const path = require('path')
 const rp = require('yyl-replacer')
+const print = require('yyl-print')
 
 const SEED_PATH = path.join(__dirname, './seeds')
 
@@ -115,6 +116,10 @@ const config = {
      * afterCopy({fileMap, targetPath, env })
      */
     async afterCopy({targetPath, env}) {
+      if (env.silent) {
+        print.log.setLogLevel(0)
+      }
+
       // + format
       print.log.info(lang.FORMAT_FILE_START)
       const rPaths = [
