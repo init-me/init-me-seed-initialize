@@ -5,6 +5,7 @@ const rp = require('yyl-replacer')
 const fs = require('fs')
 const util = require('yyl-util')
 
+seed.path
 
 it('hooks test', async() => {
   const SEED_PATH = path.join(__dirname, '../seeds')
