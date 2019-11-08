@@ -1,10 +1,11 @@
 {
   "name": "init-me-seed-initialize",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "init-me seed create helper",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
+    "eslint": "eslint ./index.js",
     "test": "jest test/test.js"
   },
   "engines": {
@@ -34,6 +35,8 @@
   "devDependencies": {
     "jest": "^24.9.0",
     "yyl-fs": "^0.3.2",
-    "yyl-util": "^2.3.5"
+    "yyl-util": "^2.3.5",
+    "eslint": "^6.6.0",
+    "eslint-plugin-node": "^10.0.0"
   }
 }
